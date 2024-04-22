@@ -51,7 +51,7 @@
             type="password"
             v-model="newUser.password"
             placeholder="Password"
-            v-validate="{ required: true }"
+            v-validate="{ required: true, min: 9 }"
             name="password"
             class="mt-3"
           >
@@ -116,7 +116,10 @@ export default {
     },
     async addUser() {
       try {
-        await this.$validator.validate();
+        const validity = await this.$validator.validate();
+        if (!validity) {
+          return false;
+        }
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(this.newUser.password, salt);
         const response = await axios.post("http://localhost:3000/users", {
@@ -125,6 +128,7 @@ export default {
           password: hash,
           role: this.newUser.role,
         });
+        // this.submitted = true;
         console.log("User added successfully:", response.data);
         this.newUser = {
           name: "",
@@ -132,7 +136,7 @@ export default {
           password: "",
           role: null,
         };
-        this.submitted = true;
+        this.submitted = false;
         this.fetchUsers();
       } catch (error) {
         console.error("Error adding user:", error);
