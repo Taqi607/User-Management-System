@@ -76,7 +76,3 @@ router.beforeEach((to, from, next) => {
 });
 
 export default router;
-
-// what is hashing?
-// Api integration
-//jwt provide hash
