@@ -72,7 +72,6 @@ export default {
       submitted: false,
       roles: [
         { value: null, text: "Select a role" },
-        { value: "admin", text: "admin" },
         { value: "user", text: "user" },
       ],
     };

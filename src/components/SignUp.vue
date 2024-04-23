@@ -78,7 +78,6 @@ export default {
       users: [],
       roles: [
         { value: null, text: "Select a role" },
-        { value: "admin", text: "Admin" },
         { value: "user", text: "User" },
       ],
       submitted: false,
