@@ -28,15 +28,7 @@
           <div v-if="submitted" class="error-message">
             {{ errors.first("password") }}
           </div>
-          <!-- // <b-form-group>
-          //   <b-form-select
-          //     name="role"
-          //     v-validate="{ required: true }"
-          //     v-model="form.role"
-          //     :options="roles"
-          //   >
-          //   </b-form-select>
-          // </b-form-group> -->
+
           <div v-if="submitted" class="error-message">
             {{ errors.first("role") }}
           </div>
@@ -56,8 +48,6 @@
 import axios from "axios";
 import bcrypt from "bcryptjs";
 
-// import bcrypt from "bcryptjs";
-
 export default {
   name: "loginPage",
   data() {
@@ -69,16 +59,16 @@ export default {
       },
       loginUser: [],
       submitted: false,
-      // roles: [
-      //   { value: null, text: "Select a role" },
-      //   { value: "user", text: "user" },
-      // ],
     };
   },
   methods: {
     async loginForm() {
       try {
         let response = await this.$validator.validate();
+        if (!response) {
+          alert("please enter a valid credentials");
+          return false;
+        }
         const salt = bcrypt.genSaltSync(10);
         const hash = await bcrypt.hash(this.form.password, salt);
         let result = await axios.post("http://localhost:3000/loginUser", {
@@ -86,10 +76,10 @@ export default {
           password: hash,
           role: this.form.role,
         });
-        console.log("post request result: ", result.data);
+        console.log("Post Request Response: ", result.data);
         this.submitted = true;
-        const userData = result.data;
-        // console.log("success", result.data);
+        const userData = result && result.data;
+
         if (userData) {
           let signUpData = await axios.get(
             `http://localhost:3000/users?email=${this.form.email}&role=${this.form.role}`
@@ -113,13 +103,13 @@ export default {
                 this.$router.push({ name: selectRoute });
               }
             } else {
-              alert("Credentials do not match");
+              alert("invalid credentials");
             }
           }
         }
       } catch (error) {
         console.log("Error", error);
-        alert("login failed", " please Check your credentials");
+        alert("Enter valid credentials");
       }
     },
   },
