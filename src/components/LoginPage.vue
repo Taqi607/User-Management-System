@@ -28,10 +28,18 @@
           <div v-if="submitted" class="error-message">
             {{ errors.first("password") }}
           </div>
-
+          <!-- <b-form-group>
+            <b-form-select
+              name="role"
+              v-validate="{ required: true }"
+              v-model="form.role"
+              :options="roles"
+            >
+            </b-form-select>
+          </b-form-group>
           <div v-if="submitted" class="error-message">
             {{ errors.first("role") }}
-          </div>
+          </div> -->
 
           <b-button block variant="info" @click="loginForm">Login</b-button>
           <p class="mt-3">
@@ -55,40 +63,43 @@ export default {
       form: {
         email: "",
         password: "",
-        role: "user",
       },
       loginUser: [],
       submitted: false,
+      // roles: [
+      //   { value: null, text: "Select a role" },
+      //   { value: "admin", text: "admin" },
+      //   { value: "user", text: "user" },
+      // ],
     };
   },
   methods: {
     async loginForm() {
       try {
         let response = await this.$validator.validate();
-        if (!response) {
-          alert("please enter a valid credentials");
-          return false;
-        }
+        // if (!response) {
+        //   alert("please enter a valid credentials");
+        //   return false;
+        // }
         const salt = bcrypt.genSaltSync(10);
         const hash = await bcrypt.hash(this.form.password, salt);
         let result = await axios.post("http://localhost:3000/loginUser", {
           email: this.form.email,
           password: hash,
-          role: this.form.role,
         });
         console.log("Post Request Response: ", result.data);
         this.submitted = true;
         const userData = result && result.data;
-
         if (userData) {
           let signUpData = await axios.get(
-            `http://localhost:3000/users?email=${this.form.email}&role=${this.form.role}`
+            `http://localhost:3000/users?email=${this.form.email}`
           );
-          console.log("data of signUp", signUpData.data);
+          console.log("SignUpData", signUpData.data);
           const storeData = signUpData.data[0];
+          console.log("ok", signUpData.data[0].role);
           if (
-            signUpData.data.length === 1 &&
-            storeData.role === this.form.role
+            signUpData.data.length === 1
+            // signUpData.data[0].role === "admin"
           ) {
             const isMatched = bcrypt.compareSync(
               this.form.password,
@@ -96,7 +107,7 @@ export default {
             );
             console.log("isMatched result:", isMatched);
             console.log("validation response:", response);
-            if (isMatched && response) {
+            if (isMatched) {
               localStorage.setItem("user-info", JSON.stringify(storeData));
               const selectRoute = storeData.role == "admin" ? "admin" : "home";
               if (this.$route.name !== selectRoute) {

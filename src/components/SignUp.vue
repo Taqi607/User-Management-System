@@ -88,7 +88,8 @@ export default {
         // status (pending, )
         let response = await this.$validator.validate();
         if (!response) {
-          return;
+          alert("please enter a valid credentials");
+          return false;
         }
         const salt = bcrypt.genSaltSync(10);
         const hashed = bcrypt.hashSync(this.form.password, salt);
@@ -101,6 +102,7 @@ export default {
         });
         this.submitted = true;
         console.log("result added", result.data);
+
         if (result.status == 201 && response) {
           console.log("status info", this.form.status);
           localStorage.setItem("user-info", JSON.stringify(result.data));
