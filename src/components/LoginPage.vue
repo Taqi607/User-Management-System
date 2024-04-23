@@ -28,15 +28,15 @@
           <div v-if="submitted" class="error-message">
             {{ errors.first("password") }}
           </div>
-          <b-form-group>
-            <b-form-select
-              name="role"
-              v-validate="{ required: true }"
-              v-model="form.role"
-              :options="roles"
-            >
-            </b-form-select>
-          </b-form-group>
+          <!-- // <b-form-group>
+          //   <b-form-select
+          //     name="role"
+          //     v-validate="{ required: true }"
+          //     v-model="form.role"
+          //     :options="roles"
+          //   >
+          //   </b-form-select>
+          // </b-form-group> -->
           <div v-if="submitted" class="error-message">
             {{ errors.first("role") }}
           </div>
@@ -65,15 +65,14 @@ export default {
       form: {
         email: "",
         password: "",
-        role: null,
-        status: 0,
+        role: "user",
       },
       loginUser: [],
       submitted: false,
-      roles: [
-        { value: null, text: "Select a role" },
-        { value: "user", text: "user" },
-      ],
+      // roles: [
+      //   { value: null, text: "Select a role" },
+      //   { value: "user", text: "user" },
+      // ],
     };
   },
   methods: {
@@ -86,7 +85,6 @@ export default {
           email: this.form.email,
           password: hash,
           role: this.form.role,
-          status: this.form.status,
         });
         console.log("post request result: ", result.data);
         this.submitted = true;

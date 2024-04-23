@@ -22,20 +22,6 @@
       "email": "mf@techScale.io",
       "password": "$2a$10$lGL.VM1IS.ke9MB3QKtOi.9XBaCkoPKpjwtmas.73gKYho3j46sda",
       "role": "admin"
-    },
-    {
-      "id": "6864",
-      "name": "ahmed",
-      "email": "ahmed@techScale.io",
-      "password": "$2a$10$8tZ5jcToqGZZfaEnpxekjuYtY9CtWev/i5SQtx2xgO4uyw.OCifga",
-      "role": "user"
-    },
-    {
-      "id": "5edf",
-      "name": "ahmed",
-      "email": "ahmed@techScale.io",
-      "password": "$2a$10$ZTgHxEt9ltjnBo3kHwm58uay3cOaDADmkty9O.qz0h/fTCEithkLq",
-      "role": "user"
     }
   ],
   "loginUser": [
@@ -44,19 +30,6 @@
       "email": "mt@techscale.io",
       "password": "$2a$10$uluMdcotZxQ/mFy4hcEIfO/NwAg//qxn99Q/Jseu7GejsoaL/cRpe",
       "role": "admin"
-    },
-    {
-      "id": "b173",
-      "email": "sjadjsk",
-      "password": "$2a$10$EaOfxkZox9C8Xg6t00Ekp.DONyF2AoHblyYQ02fR1BaRXMP8t/R/W",
-      "role": "admin"
-    },
-    {
-      "id": "3f97",
-      "email": "mf@techScale.io",
-      "password": "$2a$10$Z9RCD5YtU7cXoB/mzIDIgO/WqbAIMSq9mAGpQBED2ZpJ4SeE.cM0G",
-      "role": "admin",
-      "status": 0
     }
   ]
 }

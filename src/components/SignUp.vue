@@ -39,7 +39,7 @@
           <div v-if="submitted" class="error-message">
             {{ errors.first("password") }}
           </div>
-          <b-form-group>
+          <!-- <b-form-group>
             <b-form-select
               v-model="form.role"
               name="role"
@@ -48,7 +48,7 @@
               :options="roles"
             >
             </b-form-select>
-          </b-form-group>
+          </b-form-group> -->
           <div v-if="submitted" class="error-message">
             {{ errors.first("role") }}
           </div>
@@ -72,14 +72,13 @@ export default {
         name: "",
         email: "",
         password: null,
-        role: null,
-        status: 0,
+        role: "user",
       },
       users: [],
-      roles: [
-        { value: null, text: "Select a role" },
-        { value: "user", text: "User" },
-      ],
+      // roles: [
+      //   { value: null, text: "Select a role" },
+      //   { value: "user", text: "User" },
+      // ],
       submitted: false,
     };
   },
@@ -93,13 +92,11 @@ export default {
         }
         const salt = bcrypt.genSaltSync(10);
         const hashed = bcrypt.hashSync(this.form.password, salt);
-        this.form.status = 0;
         let result = await axios.post("http://localhost:3000/users", {
           name: this.form.name,
           email: this.form.email,
           password: hashed,
           role: this.form.role,
-          status: this.form.status,
           // status
         });
         this.submitted = true;
