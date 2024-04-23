@@ -28,7 +28,8 @@
       "name": "Muhammad Furqaan",
       "email": "mf@techScale.io",
       "password": "$2a$10$lGL.VM1IS.ke9MB3QKtOi.9XBaCkoPKpjwtmas.73gKYho3j46sda",
-      "role": "admin"
+      "role": "admin",
+      "userStatus": 1
     },
     {
       "id": "7b1d",
@@ -412,6 +413,16 @@
       "id": "4626",
       "email": "",
       "password": "$2a$10$38xrph6RSqDrPacuoDH6zuiOYFc9bqyU3ZKCk4sNnWuy82kmqtKPK"
+    },
+    {
+      "id": "216d",
+      "email": "mf@techScale.io",
+      "password": "$2a$10$EZFhIEdv1/FiQ6ICVUOhXuoC3EP.0F/sQUzlkS6Y17kEb03P2U/1."
+    },
+    {
+      "id": "4c80",
+      "email": "aneela@techScale.io",
+      "password": "$2a$10$hh9GquqmYTR0Tp4kjT19GeT1zyQ4YTD.BCw25LFAYMn1YER8X9eT."
     }
   ]
 }

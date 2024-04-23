@@ -28,19 +28,6 @@
           <div v-if="submitted" class="error-message">
             {{ errors.first("password") }}
           </div>
-          <!-- <b-form-group>
-            <b-form-select
-              name="role"
-              v-validate="{ required: true }"
-              v-model="form.role"
-              :options="roles"
-            >
-            </b-form-select>
-          </b-form-group>
-          <div v-if="submitted" class="error-message">
-            {{ errors.first("role") }}
-          </div> -->
-
           <b-button block variant="info" @click="loginForm">Login</b-button>
           <p class="mt-3">
             Don't have an account?
@@ -96,7 +83,7 @@ export default {
           );
           console.log("SignUpData", signUpData.data);
           const storeData = signUpData.data[0];
-          console.log("ok", signUpData.data[0].role);
+          console.log("Role", signUpData.data[0].role);
           if (
             signUpData.data.length === 1
             // signUpData.data[0].role === "admin"

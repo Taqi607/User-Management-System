@@ -39,16 +39,7 @@
           <div v-if="submitted" class="error-message">
             {{ errors.first("password") }}
           </div>
-          <!-- <b-form-group>
-            <b-form-select
-              v-model="form.role"
-              name="role"
-              type="text"
-              v-validate="{ required: true }"
-              :options="roles"
-            >
-            </b-form-select>
-          </b-form-group> -->
+
           <div v-if="submitted" class="error-message">
             {{ errors.first("role") }}
           </div>
@@ -75,10 +66,6 @@ export default {
         role: "user",
       },
       users: [],
-      // roles: [
-      //   { value: null, text: "Select a role" },
-      //   { value: "user", text: "User" },
-      // ],
       submitted: false,
     };
   },
