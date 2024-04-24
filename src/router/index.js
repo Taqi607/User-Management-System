@@ -24,6 +24,7 @@ const routes = [
     component: addProduct,
     meta: {
       requiresAuth: true,
+      allowedRoles: ["user"],
     },
   },
   {

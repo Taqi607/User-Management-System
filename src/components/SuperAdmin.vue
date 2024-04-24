@@ -1,10 +1,8 @@
 <template>
   <div>
     <h1>Admin Page</h1>
-
     <div v-if="users.length > 0" class="bg-info">
       <h2>User Information</h2>
-
       <div class="col-4">
         <table class="ml-3">
           <tr>
@@ -16,6 +14,10 @@
             <td>{{ user.name }}</td>
             <td>{{ user.email }}</td>
             <td>{{ user.role }}</td>
+            <td class="d-flex mr-3">
+              <b-button variant="success" class="ml-3">Approved</b-button>
+              <b-button variant="danger" class="ml-3">Decline</b-button>
+            </td>
           </tr>
         </table>
       </div>
@@ -59,21 +61,6 @@
           <div v-if="submitted" class="error-message">
             {{ errors.first("password") }}
           </div>
-          <b-form-group>
-            <b-form-select
-              type="text"
-              v-model="newUser.role"
-              :options="roles"
-              name="role"
-              v-validate="{ required: true }"
-              aria-placeholder="Select a role"
-              class="mt-3"
-            >
-            </b-form-select>
-          </b-form-group>
-          <div v-if="submitted" class="error-message">
-            {{ errors.first("role") }}
-          </div>
           <b-button type="submit" class="mt-3 btn-success"
             >Add New User</b-button
           >
@@ -96,12 +83,8 @@ export default {
         name: "",
         email: "",
         password: "",
-        role: null,
+        role: "user",
       },
-      roles: [
-        { value: null, text: "Select a role" },
-        { value: "user", text: "user" },
-      ],
       submitted: false,
     };
   },
@@ -116,17 +99,13 @@ export default {
     },
     async addUser() {
       try {
-        const validity = await this.$validator.validate();
-        if (!validity) {
-          return false;
-        }
+        await this.$validator.validate();
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(this.newUser.password, salt);
         const response = await axios.post("http://localhost:3000/users", {
           name: this.newUser.name,
           email: this.newUser.email,
           password: hash,
-          role: this.newUser.role,
         });
         // this.submitted = true;
         console.log("User added successfully:", response.data);
@@ -140,29 +119,26 @@ export default {
         this.fetchUsers();
       } catch (error) {
         console.error("Error adding user:", error);
+        this.$bvToast.toast("Server not connected", {
+          title: "ERROR",
+          variant: "danger",
+          solid: true,
+          autoHideDelay: 1500,
+          toster: "b-toaster-top-right",
+        });
       }
     },
   },
   mounted() {
-    const user = localStorage.getItem("user-info");
-    if (user) {
-      this.$bvToast.toast("You login as Admin", {
-        title: "SUCCESS",
-        variant: "success",
-        solid: true,
-        autoHideDelay: 1500,
-        toster: "b-toaster-top-right",
-      });
-    } else {
-      this.$bvToast.toast("Server not connected", {
-        title: "ERROR",
-        variant: "danger",
-        solid: true,
-        autoHideDelay: 1500,
-        toster: "b-toaster-top-right",
-      });
-    }
+    localStorage.getItem("user-info");
     this.fetchUsers();
+    this.$bvToast.toast("You login as Admin", {
+      title: "SUCCESS",
+      variant: "success",
+      solid: true,
+      autoHideDelay: 1500,
+      toster: "b-toaster-top-right",
+    });
   },
 };
 </script>

@@ -53,21 +53,16 @@ export default {
       },
       loginUser: [],
       submitted: false,
-      // roles: [
-      //   { value: null, text: "Select a role" },
-      //   { value: "admin", text: "admin" },
-      //   { value: "user", text: "user" },
-      // ],
     };
   },
   methods: {
     async loginForm() {
       try {
+        this.submitted = true;
         let response = await this.$validator.validate();
-        // if (!response) {
-        //   alert("please enter a valid credentials");
-        //   return false;
-        // }
+        if (!response) {
+          return false;
+        }
         const salt = bcrypt.genSaltSync(10);
         const hash = await bcrypt.hash(this.form.password, salt);
         let result = await axios.post("http://localhost:3000/loginUser", {
@@ -84,14 +79,12 @@ export default {
           console.log("SignUpData", signUpData.data);
           const storeData = signUpData.data[0];
           console.log("Role", signUpData.data[0].role);
-          if (
-            signUpData.data.length === 1
-            // signUpData.data[0].role === "admin"
-          ) {
+          if (signUpData.data.length === 1) {
             const isMatched = bcrypt.compareSync(
               this.form.password,
               storeData.password
             );
+            // console.log("ok ok ", this.form.role);
             console.log("isMatched result:", isMatched);
             console.log("validation response:", response);
             if (isMatched) {
@@ -122,7 +115,6 @@ export default {
 
 <style>
 .logo-adjust {
-  /* margin-top: 10px; */
   margin-bottom: 20px;
   max-width: 130px;
   height: auto;
