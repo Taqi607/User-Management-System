@@ -64,7 +64,7 @@ export default {
         email: "",
         password: null,
         role: "user",
-        // userStatus: 0,
+        status: 0,
       },
       users: [],
       submitted: false,
@@ -86,18 +86,16 @@ export default {
           email: this.form.email,
           password: hashed,
           role: this.form.role,
+          status: this.form.status,
           // userStatus: this.form.userStatus,
           // status
         });
         this.submitted = true;
         console.log("result added", result.data);
-
         if (result.status == 201) {
           console.log("status info", this.form.status);
           localStorage.setItem("user-info", JSON.stringify(result.data));
           this.$router.push({ name: "login" });
-        } else {
-          alert("your request is pending, wait for the admin approval");
         }
       } catch (error) {
         console.log(error);

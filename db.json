@@ -28,7 +28,8 @@
       "name": "Muhammad Furqaan",
       "email": "mf@techScale.io",
       "password": "$2a$10$lGL.VM1IS.ke9MB3QKtOi.9XBaCkoPKpjwtmas.73gKYho3j46sda",
-      "role": "admin"
+      "role": "admin",
+      "status": 1
     },
     {
       "id": "7b1d",
@@ -36,109 +37,76 @@
       "email": "aneela@techScale.io",
       "password": "$2a$10$DNrBdqUApiuJqHUWEK8Ly.BKNx1KUAogBq.iU/SXzytMydNvQSqN6",
       "role": "user"
+    },
+    {
+      "id": "7813",
+      "name": "Naveen raza",
+      "email": "raza@gmail.com",
+      "password": "$2a$10$xBnmOu7XUsKVDS7MArCBv.dstDpMCCINxWsHm/oVInjrLCIDOc2ue"
+    },
+    {
+      "id": "1cc7",
+      "name": "hello world",
+      "email": "world@gmail.com",
+      "password": "$2a$10$n6hfWMoufOin62Hdy0kHDetQgigJ6HM44KZckd4rikUnv3orLWtXe",
+      "role": "user"
+    },
+    {
+      "id": "e9cf",
+      "name": "Muhammad Qasim",
+      "email": "qasim@tech.io",
+      "password": "$2a$10$SEGQeSM7Ii2xas.nSAGnIukSpgvEbR/NAx8AEvD654Gk0rPBTKujW",
+      "role": "user"
+    },
+    {
+      "id": "ec5b",
+      "name": "Nabeel arshad",
+      "email": "na@tech.io",
+      "password": "$2a$10$ZbwP7mDVYIWt0B59.ZYFI.7L0o6vXK/HGZ9mdyOsGKTkO.fFQQj9W",
+      "role": "user",
+      "status": 0
+    },
+    {
+      "id": "cb2d",
+      "name": "Afaq nawaz",
+      "email": "afaq@tech.io",
+      "password": "$2a$10$DQCsQq.J9V/TDCzOqTQ9ZeJ3K6lfOFQCT8H2BrUZLSbvUAjBwffwG",
+      "role": "user",
+      "status": 0
     }
   ],
   "loginUser": [
     {
-      "id": "13de",
-      "email": "mt@techscale.io",
-      "password": "$2a$10$uluMdcotZxQ/mFy4hcEIfO/NwAg//qxn99Q/Jseu7GejsoaL/cRpe",
-      "role": "admin"
-    },
-    {
-      "id": "168c",
       "email": "mf@techScale.io",
-      "password": "$2a$10$dNu/9Ow4qcdXTSRwptfyyOkWTShCrx.1xILbzzbyuuOMRgWeF3m02"
+      "password": "$2a$10$P01U75Ed0KFQxJSzhy82T.3QoSVhS33bxXF2LVPnhGHo0LFN9wGri",
+      "role": "admin",
+      "status": 0,
+      "id": "168c"
     },
     {
-      "id": "63aa",
-      "email": "mf@techScale.io",
-      "password": "$2a$10$b3fueR4inQg7O9QC.2bfxuEiPOC.Bx50bi4r.4F61wmGRycKxY1QW"
-    },
-    {
-      "id": "acd6",
-      "email": "mf@techScale.io",
-      "password": "$2a$10$PMHQLIHN2zNY5KybrbvDB./q2JEmvYK.EOGkQNWw.LWsW1TRMr2KW"
-    },
-    {
-      "id": "ffda",
-      "email": "mf@techScale.io",
-      "password": "$2a$10$dafx5yfLod1uTQK2BifdGOR5yIvN9tneFaemFWUghRLhPTuCjgGia"
-    },
-    {
-      "id": "5de2",
-      "email": "mf@techScale.io",
-      "password": "$2a$10$k7CUfaHsqC23LUA19Os20.vG67u25XiLCXYsoNX8IEhVoEhSam5Qa"
-    },
-    {
-      "id": "6680",
       "email": "aneela@techScale.io",
-      "password": "$2a$10$8.jiuf7HXGCciemGFJRi7OXqNTlj1iTI7yPZot0vYlpFbmuDWpAcy"
+      "password": "$2a$10$pfXaTSlDqndAVqQdDKU0sOUsO3/zFsf/Cz9tZJAmta1OhbMsdIRcS",
+      "role": "user",
+      "id": "f8a8"
     },
     {
-      "id": "7614",
-      "email": "aneela@techScale.io",
-      "password": "$2a$10$OjrdoiF0ZRO5wkh8xH4yee7q.m2Pk4cMBWkyKXu5BCHcHB/9kHP06"
+      "id": "98d8",
+      "email": "world@gmail.com",
+      "password": "$2a$10$mZVsy7MpJF5k5HYenebTaOX8gLP..xXjOEpNwytWFN7fulSrDLF2C",
+      "role": "user"
     },
     {
-      "id": "04e5",
-      "email": "aneela@techScale.io",
-      "password": "$2a$10$20lb9n9RPqcqmDVvMI4zO.vRyn2yQZltFRM0XjNxMkNqXq8NVO0QS"
+      "id": "1b29",
+      "email": "qasim@tech.io",
+      "password": "$2a$10$01bbts4Wa9wQ0acW64UHbO6kqHeQnUdU.WYAK5Lftu6.JhppHIMXa",
+      "role": "user"
     },
     {
-      "id": "836d",
-      "email": "aneela@techScale.io",
-      "password": "$2a$10$pa6l3Tw2QXnXvhuLvzr8D.ZfSOxGoBYw35OD6xaGBN8CHvQtryHyO"
-    },
-    {
-      "id": "5320",
-      "email": "aneela@techScale.io",
-      "password": "$2a$10$BMzdjHaiy7p4hPE1oShkP.ZcUU61TQSXm8GoneQ1thf3YaBbk61kq"
-    },
-    {
-      "id": "18e1",
-      "email": "aneela@techScale.io",
-      "password": "$2a$10$iLJHCvCdtPhqFpP5HTRylOT4qzgnw.l9oRsHwfWMDS8OaD/cc2uL."
-    },
-    {
-      "id": "5be0",
-      "email": "aneela@techScale.io",
-      "password": "$2a$10$uy29HS2rS1dDiLCGaE3MXeEwn0HJEz37mhAg.0lMeKseBmaMjc0w2"
-    },
-    {
-      "id": "ba95",
-      "email": "aneela@techScale.io",
-      "password": "$2a$10$WRvXQOl5JTTigSBHw2b7oeRJlAxGb5rK6h8n3VGzww7yx9qRmefhG"
-    },
-    {
-      "id": "631f",
-      "email": "aneela@techScale.io",
-      "password": "$2a$10$cgOm.YrdEmx6fnUAmpOX3u3bQHkWvtFX4TUjjAYZgTBDejvaBOe2m"
-    },
-    {
-      "id": "d437",
-      "email": "aneela@techScale.io",
-      "password": "$2a$10$U7ibpLblUku86MyNZpO.auMCh.rbtbwxeyJ4k15Q5YTGmVLUme8by"
-    },
-    {
-      "id": "1938",
-      "email": "aneela@techScale.io",
-      "password": "$2a$10$Ojz9jDT2CMUSPj2e7JjucuGFWJv1u1tw66C3EMNMAHyxVBr0fFBAe"
-    },
-    {
-      "id": "c4bb",
-      "email": "mf@techScale.io",
-      "password": "$2a$10$mpEQiH9MDw.hqz7OntvRwORt/lByK./BS8mZk3fC//rPQ49dz3GCq"
-    },
-    {
-      "id": "f171",
-      "email": "mf@techScale.io",
-      "password": "$2a$10$yQKPg3y9vXiJ4mgbskNRmeUkn0wv5QK2d9P01LXh3SPAoMWEwcGXy"
-    },
-    {
-      "id": "6874",
-      "email": "aneela@techScale.io",
-      "password": "$2a$10$46Y1fi/JsSAJCno779WLb.oHYBWhEyk1oGv2R1CgqlrC6VJdv8QEy"
+      "email": "afaq@tech.io",
+      "password": "$2a$10$fF9VRbXQrSOwTvvnD7Pdsu9HHWTXOJkzbDxIXJLIytFRT7J28XxnG",
+      "role": "user",
+      "status": 0,
+      "id": "3fdd"
     }
   ]
 }

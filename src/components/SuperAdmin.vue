@@ -1,22 +1,34 @@
 <template>
   <div>
-    <h1>Admin Page</h1>
+    <h1 class="d-flex justify-content-center bg-success mb-0">Admin Page</h1>
     <div v-if="users.length > 0" class="bg-info">
       <h2>User Information</h2>
-      <div class="col-4">
+      <div class="col-3">
         <table class="ml-3">
           <tr>
             <th>Name</th>
             <th>Email</th>
             <th>Role</th>
           </tr>
-          <tr v-for="(user, index) in users" :key="index">
+          <tr v-for="(user, index) in users" :key="index" class="ml-3">
             <td>{{ user.name }}</td>
             <td>{{ user.email }}</td>
             <td>{{ user.role }}</td>
+            <td>{{ user.id }}</td>
+
             <td class="d-flex mr-3">
-              <b-button variant="success" class="ml-3">Approved</b-button>
-              <b-button variant="danger" class="ml-3">Decline</b-button>
+              <b-button
+                variant="success"
+                class="ml-3"
+                @click="approveUser(user.id)"
+                >Approved</b-button
+              >
+              <b-button
+                variant="danger"
+                class="ml-3"
+                @click="declineUser(user.id)"
+                >Decline</b-button
+              >
             </td>
           </tr>
         </table>
@@ -89,14 +101,44 @@ export default {
     };
   },
   methods: {
+    //fetch all users data.
     async fetchUsers() {
       try {
         const response = await axios.get("http://localhost:3000/users");
-        this.users = response.data;
+        this.users = response.data.filter((user) => {
+          return user.status === "user";
+        });
       } catch (error) {
         console.error("Error fetching users:", error);
       }
     },
+
+    async approveUser(userId) {
+      try {
+        const res = await axios.patch(`http://localhost:3000/users/${userId}`, {
+          status: 1,
+        });
+        // console.log("user", user);
+        console.log("request approved successfully", res.data);
+        this.fetchUsers();
+      } catch (error) {
+        console.log("user not approved", error);
+      }
+    },
+
+    async declineUser(userId) {
+      try {
+        const res = await axios.patch(`http://localhost:3000/users/${userId}`, {
+          status: 0,
+        });
+        console.log("request declined by admin", res.data);
+        this.fetchUsers();
+      } catch (err) {
+        console.log("declined by admin", err);
+      }
+    },
+
+    //add new users
     async addUser() {
       try {
         await this.$validator.validate();
@@ -106,6 +148,7 @@ export default {
           name: this.newUser.name,
           email: this.newUser.email,
           password: hash,
+          role: this.newUser.role,
         });
         // this.submitted = true;
         console.log("User added successfully:", response.data);
@@ -129,6 +172,7 @@ export default {
       }
     },
   },
+
   mounted() {
     localStorage.getItem("user-info");
     this.fetchUsers();
