@@ -73,12 +73,20 @@
       "password": "$2a$10$DQCsQq.J9V/TDCzOqTQ9ZeJ3K6lfOFQCT8H2BrUZLSbvUAjBwffwG",
       "role": "user",
       "status": 0
+    },
+    {
+      "id": "c1f4",
+      "name": "Awais cheema",
+      "email": "cheema@tech.io",
+      "password": "$2a$10$Tjy5sVQg5asgAj9s9YWm/.iI0/aiS4EwNzlbpPgXRlJ7Xgo1qN1su",
+      "role": "user",
+      "status": 1
     }
   ],
   "loginUser": [
     {
       "email": "mf@techScale.io",
-      "password": "$2a$10$P01U75Ed0KFQxJSzhy82T.3QoSVhS33bxXF2LVPnhGHo0LFN9wGri",
+      "password": "$2a$10$PpOj9ZZdIq.kWxf9TV0N3OcA3KkZZV63ZJVLd0LBJ5QLaHquTsf9q",
       "role": "admin",
       "status": 0,
       "id": "168c"
@@ -103,10 +111,59 @@
     },
     {
       "email": "afaq@tech.io",
-      "password": "$2a$10$fF9VRbXQrSOwTvvnD7Pdsu9HHWTXOJkzbDxIXJLIytFRT7J28XxnG",
+      "password": "$2a$10$ABNqy4mJRh/CF0cYTjmwSuWASUCZSli4slXeJnmsJGUFaLPaG3PiK",
       "role": "user",
       "status": 0,
       "id": "3fdd"
+    },
+    {
+      "id": "c650",
+      "email": "afaq@tech.io",
+      "password": "$2a$10$gQ/cGsSPbHjKep5qAAyq8.U5toe/mzT4/wnOqbPl5fBLiq/YGwo4y",
+      "role": "user",
+      "status": 0
+    },
+    {
+      "id": "5823",
+      "email": "afaq@tech.io",
+      "password": "$2a$10$ARoiYQ0uKKk1wh8MKo22nODCHL9fwamoKWLlkic/uH/nuzvOhr68W",
+      "role": "user",
+      "status": 0
+    },
+    {
+      "id": "41fe",
+      "email": "afaq@tech.io",
+      "password": "$2a$10$59mDmH.rSM1ts/UYLQQdnO7Y5mVTvkLE0s1h699nycZqsh1QnbWfy",
+      "role": "user",
+      "status": 0
+    },
+    {
+      "id": "d7da",
+      "email": "afaq@tech.io",
+      "password": "$2a$10$.aXyjakBllQZbIE5NnHjNOtmRs2u9B.L9rbG77ywf8oRJOEdq6iHS",
+      "role": "user",
+      "status": 0
+    },
+    {
+      "id": "eb16",
+      "email": "afaq@tech.io",
+      "password": "$2a$10$rABxumkTla1/RAw7DDyXHOFi2/1E0fHH//4O8rRS8P42qXdSE0eJW",
+      "role": "user",
+      "status": 0
+    },
+    {
+      "id": "41e9",
+      "email": "afaq@tech.io",
+      "password": "$2a$10$WOY2ohNAbAt.eAsy3Cl5ReJGV8nMDBOsTUASmSPXBusIi19EEHUF6",
+      "role": "user",
+      "status": 0
+    },
+    {
+      "email": "cheema@tech.io",
+      "password": "$2a$10$Wj.bq/4s7efTpBLifrfkge7Vr2TwCUO0Q/gJ2p1zrfHA0PXI/26MS",
+      "role": "user",
+      "status": 0,
+      "id": "7f79"
     }
   ]
 }

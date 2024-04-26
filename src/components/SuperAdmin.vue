@@ -106,7 +106,7 @@ export default {
       try {
         const response = await axios.get("http://localhost:3000/users");
         this.users = response.data.filter((user) => {
-          return user.status === "user";
+          return user.status === 0;
         });
       } catch (error) {
         console.error("Error fetching users:", error);

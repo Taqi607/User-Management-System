@@ -107,12 +107,11 @@ export default {
                 status: this.form.status,
               });
             }
-            if (this.form.status === 0 && !storeData.role === "admin") {
+            if (storeData.status === 0) {
               return false;
             }
             // Set user info in localStorage
             localStorage.setItem("user-info", JSON.stringify(storeData));
-
             // Redirect based on user role
             const selectRoute = storeData.role === "admin" ? "admin" : "home";
             this.$router.push({ name: selectRoute });
@@ -127,7 +126,6 @@ export default {
         alert("Enter valid credentials");
       }
     },
-
     mounted() {
       let user = localStorage.getItem("user-info");
       if (!user && this.$route.name !== "login") {
