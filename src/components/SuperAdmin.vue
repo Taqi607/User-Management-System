@@ -11,10 +11,10 @@
             <th>Role</th>
           </tr>
           <tr v-for="(user, index) in users" :key="index" class="ml-3">
-            <td>{{ user.name }}</td>
-            <td>{{ user.email }}</td>
-            <td>{{ user.role }}</td>
-            <td>{{ user.id }}</td>
+            <td class="text-white p-3 bg-success">{{ user.name }}</td>
+            <td class="text-white p-3 bg-success">{{ user.email }}</td>
+            <td class="text-white p-3 bg-success">{{ user.role }}</td>
+            <td class="text-white p-3 bg-success">{{ user.id }}</td>
 
             <td class="d-flex mr-3">
               <b-button

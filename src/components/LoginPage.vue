@@ -108,7 +108,7 @@ export default {
               });
             }
             if (storeData.status === 0) {
-              return false;
+              return;
             }
             // Set user info in localStorage
             localStorage.setItem("user-info", JSON.stringify(storeData));
