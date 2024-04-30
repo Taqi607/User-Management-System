@@ -81,12 +81,20 @@
       "password": "$2a$10$Tjy5sVQg5asgAj9s9YWm/.iI0/aiS4EwNzlbpPgXRlJ7Xgo1qN1su",
       "role": "user",
       "status": 1
+    },
+    {
+      "id": "86c2",
+      "name": "Ayaz Sadiq",
+      "email": "Ayaz@tech.io",
+      "password": "$2a$10$m2wPmylwNPaO81QGRD4ta.BHpktsC.iiQLEFThLJkQTKut6LMk3jK",
+      "role": "user",
+      "status": 1
     }
   ],
   "loginUser": [
     {
       "email": "mf@techScale.io",
-      "password": "$2a$10$PpOj9ZZdIq.kWxf9TV0N3OcA3KkZZV63ZJVLd0LBJ5QLaHquTsf9q",
+      "password": "$2a$10$3o1jkGdI0lRpcYtbQnbq2OJrxTU4L8icJgeVBqmmhkzeErVn7fqI2",
       "role": "admin",
       "status": 0,
       "id": "168c"
@@ -164,6 +172,13 @@
       "role": "user",
       "status": 0,
       "id": "7f79"
+    },
+    {
+      "id": "e49b",
+      "email": "Ayaz@tech.io",
+      "password": "$2a$10$zEof7PecMFIsTOI2rAxGp.mz45Y9WKEuAAI6xfT5sRgmnDvDiBJni",
+      "role": "user",
+      "status": 0
     }
   ]
 }
